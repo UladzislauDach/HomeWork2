@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class BlockThird {
-    public static int nod, nok, P;
+
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in); // Объявляем Scanner
@@ -91,4 +91,5 @@ public class BlockThird {
         if (b == 0) return a;
         else return gcd(b, a % b);
     }
+    public static int nod, nok, P;
 }
