@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class BlockThird {
+    public static int nod, nok, P;
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in); // Объявляем Scanner
         System.out.println("Введите количесво цифр ");
@@ -66,8 +68,27 @@ public class BlockThird {
                 }
             }
         }
-        System.out.println("НОК и НОД этих чисел");
+        //Наибольший общий делитель и наименьшее общее кратное этих чисел
+        P = 1;
+        for (int i = 0; i < array.length; i++) { //Нахождение НОД всех чисел массива
+            if (i + 1 < array.length) {
+                for (int j = i + 1; j <= i + 1; j++) {
+                    nod = gcd(array[i], array[j]);
+                    P = array[i] * array[j];
+                    nok = P / nod;
+                }
+                array[i + 1] = nod;
+                array[i + 1] = nok;
+            }
 
+        }
+        System.out.println();
+        System.out.println("НОД  чисел равен " + nod);
+        System.out.println("НОК  чисел равен " + nok);
+    }
 
+    static int gcd(int a, int b) { //метод вычисляющий НОД
+        if (b == 0) return a;
+        else return gcd(b, a % b);
     }
 }
